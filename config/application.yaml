@@ -1,0 +1,24 @@
+application:
+
+  rule:
+    remote:
+      - name: Base filter
+        path: https://raw.githubusercontent.com/AdguardTeam/FiltersRegistry/master/filters/filter_2_Base/filter.txt
+
+      - name: Annoyances filter
+        path: https://raw.githubusercontent.com/AdguardTeam/FiltersRegistry/master/filters/filter_14_Annoyances/filter.txt
+
+      - name: Chinese filter
+        path: https://raw.githubusercontent.com/AdguardTeam/FiltersRegistry/master/filters/filter_224_Chinese/filter.txt
+
+      - name: Japanese filter
+        path: https://raw.githubusercontent.com/AdguardTeam/FiltersRegistry/master/filters/filter_7_Japanese/filter.txt
+
+ output:
+    file_header: |
+      Title: ${type} adblock list
+      Last Modified: ${date}
+
+    files:
+      - name: Adblock.yaml
+        type: clash
