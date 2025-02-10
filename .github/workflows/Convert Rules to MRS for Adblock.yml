@@ -26,7 +26,6 @@ jobs:
         run: sudo apt-get update && sudo apt-get install -y jq curl
 
       - name: Download Mihomo
-        if: steps.cache-mihomo.outputs.cache-hit != 'true'
         run: |
           LATEST_VERSION=$(curl -sL -H "User-Agent: GitHubActions" https://api.github.com/repos/MetaCubeX/mihomo/releases/latest | jq -r '.tag_name')
           DOWNLOAD_URL="https://github.com/MetaCubeX/mihomo/releases/download/${LATEST_VERSION}/mihomo-linux-amd64-${LATEST_VERSION}.gz"
